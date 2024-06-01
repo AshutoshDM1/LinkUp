@@ -3,11 +3,11 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Plain Light";
-  color: #6a6a6a;
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
+  background: linear-gradient(220.55deg, #b852e8 0%, #4300B1 100%);
 }

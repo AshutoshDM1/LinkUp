@@ -1,0 +1,14 @@
+.main {
+  height: 90vh;
+  width: 100%;
+  background: #00000020;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: #fffbfb69;
+  height: 80%;
+  width: 50%;
+  margin-top: 10vh;
+}

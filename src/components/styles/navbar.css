@@ -1,3 +1,62 @@
-.navbar > h1 {
-  background: #000;
+.navbar {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* background: #949494; */
 }
+
+.navbar_main {
+  height: 70%;
+  width: 90%;
+  margin-top: 10px;
+  /* background: #000; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+.navbar_main > h1 {
+  color: white;
+}
+
+#nav_links {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+#nav_links > h2 {
+  text-decoration: none;
+  font-size: 1vw;
+  font-weight: 500;
+  color: white;
+  border: 1.5px solid white;
+  padding : .5vw 1vw ;
+  border-radius: 1vw;
+}
+#nav_links>a> h2 {
+  text-decoration: none;
+  font-size: 1vw;
+  font-weight: 500;
+  color: white;
+  border: 1.5px solid white;
+  padding : .5vw 1vw ;
+  border-radius: 1vw;
+}
+#nav_links>h2:hover {
+  background: #b1b1b187;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+#nav_links>a>h2:hover {
+  background: #b1b1b187;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+
