@@ -4,8 +4,12 @@ import manLogo from "../assets/3d_man.png";
 import girlLogo from "../assets/3d_Girl.png";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-
+import LocomotiveScroll from 'locomotive-scroll';
 export default function Home() {
+
+
+const locomotiveScroll = new LocomotiveScroll();
+
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
@@ -39,7 +43,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Footer />
+      <  Footer />
     </>
   );
 }

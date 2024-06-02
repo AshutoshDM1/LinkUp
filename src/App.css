@@ -10,4 +10,39 @@ body {
   height: 100%;
   width: 100%;
   background: linear-gradient(220.55deg, #b852e8 0%, #4300B1 100%);
+  overflow-x: hidden;
 }
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+  opacity: 0;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(220.55deg, #8101bc 0%, #29006b 100%);
+  border-radius: 8px;
+  margin-right: 51px;
+  transition:  ease-in 1s;
+  cursor: pointer;
+  /* border: .5px solid #ffffff; */
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(220.55deg, #b51ffa 0%, #4102a7 100%);
+  transition:  ease-in 1s;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+} 
+
+
+
