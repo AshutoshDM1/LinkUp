@@ -1,7 +1,16 @@
 import NavBar from "../components/Navbar";
 import "../components/styles/home.css";
+import manLogo from "../assets/3d_man.png";
+import girlLogo from "../assets/3d_Girl.png";
+import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
   return (
     <>
       <NavBar />
@@ -15,16 +24,22 @@ export default function Home() {
             <p>Fast, Easy and Unlimited team Chat</p>
           </div>
           <div className="btns">
-          <h2 className="sign_in" onClick={() => handleNavigate("/sign-in")}>
-            Sign In
-          </h2>
-          <h2 className="login" onClick={() => handleNavigate("/login")}>
-            Login
-          </h2>
+            <h2 className="sign_in" onClick={() => handleNavigate("/signin")}>
+              Try for Free
+            </h2>
+            <h2 className="login" onClick={() => handleNavigate("/about")}>
+              About
+            </h2>
           </div>
         </div>
-        <div className="container"></div>
+        <div className="container">
+          <div id="canvas">
+            <img src={manLogo} />
+            <img src={girlLogo} />
+          </div>
+        </div>
       </div>
+      <Footer />
     </>
   );
 }

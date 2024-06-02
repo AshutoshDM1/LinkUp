@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./styles/navbar.css";
+import logo from '../assets/chat_ app_ logo.png' 
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -11,7 +12,10 @@ export default function NavBar() {
   return (
     <div className="navbar">
       <div className="navbar_main">
-        <h1 id="logo">LinkUp</h1>
+        <div id="logo">
+          <h1>LinkUp</h1>
+          <img src={logo}/>
+        </div>
         <div id="nav_links">
           <a href="https://github.com/AshutoshDM1/LinkUp" target="_blank" rel="noopener noreferrer">
             <h2 className="github">GitHub</h2>

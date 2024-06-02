@@ -5,7 +5,19 @@
   justify-content: center;
   /* background: #949494; */
 }
-
+#logo {
+  height: 100%;
+  width: 20%;
+  /* background: #838383; */
+  position: relative;
+}
+#logo > img {
+  object-fit: cover;
+  height: 7vw;
+  position: absolute;
+  top: -19px;
+  left: 10vw;
+}
 .navbar_main {
   height: 70%;
   width: 90%;
@@ -17,8 +29,9 @@
   padding-left: 1vw;
   padding-right: 1vw;
 }
-.navbar_main > h1 {
+.navbar_main >#logo> h1 {
   color: white;
+  font-size: 3vw;
 }
 
 #nav_links {
