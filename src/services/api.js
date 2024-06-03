@@ -1,41 +1,43 @@
-// src/services/api.js
 import axios from 'axios';
 
-const API_URL = 'http://your-backend-url.com/api';
+const API_URL = 'https://auth-backend-dm.vercel.app';
 
-const axiosInstance = axios.create({
-  baseURL: API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+export const signUpUser = async (userData) => {
+  try {
+    const response = await axios.post(`${API_URL}/v1/user/signup/`, userData , {
+      headers : {
+        'Content-Type': 'application/json'
+      }
+    });
+    console.log('Form submitted successfully:', response.data);
+    alert('Successfully signed up!');
+  } catch (error) {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      console.error('Server error:', error.response.data);
+      alert(`Server error: ${error.response.data.message}`);
+    } else if (error.request) {
+      // The request was made but no response was received
+      console.error('No response from server:', error.request);
+      alert('No response from server');
+    } else {
+      // Something happened in setting up the request that triggered an error
+      console.error('Request error:', error.message);
+      alert(`Request error: ${error.message}`);
+    }
+  }
+};
 
-export const signUp = (userData) => axiosInstance.post('/user/signUp', userData);
-export const login = (userData) => axiosInstance.post('/user/login', userData);
-export const logout = (userData) => axiosInstance.post('/user/logout', userData);
-export const getUsers = (token) =>
-  axiosInstance.get('/user/users', {
-    headers: {
-      'Authorization': `Bearer ${token}`,
-    },
-  });
-export const getPosts = () => axiosInstance.get('/user/chat/post');
-export const createPost = (postData, token) =>
-  axiosInstance.post('/user/chat/post', postData, {
-    headers: {
-      'Authorization': `Bearer ${token}`,
-    },
-  });
-export const getPostById = (postId) => axiosInstance.get(`/user/chat/post/${postId}`);
-export const updatePost = (postId, postData, token) =>
-  axiosInstance.put(`/user/chat/post/${postId}`, postData, {
-    headers: {
-      'Authorization': `Bearer ${token}`,
-    },
-  });
-export const deletePost = (postId, token) =>
-  axiosInstance.delete(`/user/chat/post/${postId}`, {
-    headers: {
-      'Authorization': `Bearer ${token}`,
-    },
-  });
+export const showUser = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};

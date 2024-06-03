@@ -20,8 +20,9 @@ export default function NavBar() {
           <a href="https://github.com/AshutoshDM1/LinkUp" target="_blank" rel="noopener noreferrer">
             <h2 className="github">GitHub</h2>
           </a>
+          <h2 className="about" onClick={() => handleNavigate('/')}>Home</h2>
           <h2 className="about" onClick={() => handleNavigate('/about')}>About</h2>
-          <h2 className="sign_in" onClick={() => handleNavigate('/sign-in')}>Sign In</h2>
+          <h2 className="sign_in" onClick={() => handleNavigate('/signUp')}>SignUp</h2>
           <h2 className="login" onClick={() => handleNavigate('/login')}>Login</h2>
         </div>
       </div>
