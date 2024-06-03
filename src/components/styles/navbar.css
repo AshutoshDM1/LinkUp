@@ -49,8 +49,11 @@ a {
   font-weight: 500;
   color: white;
   border: 1.5px solid white;
-  padding : .5vw 1vw ;
+  padding : .25vw 1vw ;
   border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #nav_links>a> h2 {
   text-decoration: none;
@@ -58,18 +61,25 @@ a {
   font-weight: 500;
   color: white;
   border: 1.5px solid white;
-  padding : .5vw 1vw ;
+  padding : .25vw 1vw ;
   border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #nav_links>h2:hover {
-  background: #b1b1b187;
+  background: #d1d1d187;
   transition: .3s ease-in-out;
+  /* padding : .3vw 1vw ; */
+
   cursor: pointer;
 }
 #nav_links>a>h2:hover {
   background: #b1b1b187;
   transition: .3s ease-in-out;
   cursor: pointer;
+  /* padding : .3vw 1vw ; */
+
 }
 
 
