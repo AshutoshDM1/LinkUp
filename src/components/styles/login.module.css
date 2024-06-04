@@ -1,0 +1,49 @@
+.main {
+  height: 90vh;
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;;
+  align-items: center;
+}
+
+.container {
+  width: 45%;
+  height: 80%;
+  background: #ffffff27;
+  display: flex;
+  justify-content: center;;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
+.container > img{
+  height: 25vw;
+
+}
+.container:nth-child(1) {
+  width: 30%;
+  background: none;
+}
+.container:nth-child(2) {
+  width: 40%;
+  margin-left: 10vw;
+}
+
+h1 {
+  margin-bottom: 2vw;
+  font-size: 2vw;
+  color: white;
+}
+
+
+.form {
+  height: 80%;
+  width: 90%;
+  background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
