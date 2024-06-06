@@ -5,6 +5,7 @@ import girlLogo from "../assets/3d_Girl.png";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import LocomotiveScroll from 'locomotive-scroll';
+import Animation from "../components/Animation";
 export default function Home() {
 
 
@@ -18,6 +19,7 @@ const locomotiveScroll = new LocomotiveScroll();
   return (
     <>
       <NavBar />
+      
       <div className="main">
         <div className="container">
           <div className="heading">
@@ -38,8 +40,7 @@ const locomotiveScroll = new LocomotiveScroll();
         </div>
         <div className="container">
           <div id="canvas">
-            <img src={manLogo} />
-            <img src={girlLogo} />
+          <Animation />
           </div>
         </div>
       </div>
