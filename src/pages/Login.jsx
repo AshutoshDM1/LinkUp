@@ -16,7 +16,7 @@ const Login = () => {
       console.log("it null");
     } else {
       alert("Your have been Logined")
-      navigate("/")
+      navigate("/chat")
     }
   }, []);
 

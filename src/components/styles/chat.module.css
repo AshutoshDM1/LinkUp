@@ -1,0 +1,10 @@
+.main {
+  height: 80vh;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.205);
+}
+
+.title {
+  font-size: 3vw;
+  text-align: center;
+}

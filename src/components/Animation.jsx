@@ -15,7 +15,7 @@ function extractMeshes(object) {
 
 function ToyModel(props) {
   const group = useRef();
-  const { scene } = useGLTF('./just_a_girl.glb'); // Adjust the path as needed
+  const { scene } = useGLTF('./just_a_girl.glb');
 
   useEffect(() => {
     console.log('Scene:', scene);
