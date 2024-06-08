@@ -27,7 +27,6 @@ body {
   margin-right: 51px;
   transition:  ease-in 1s;
   cursor: pointer;
-  /* border: .5px solid #ffffff; */
 
 }
 
@@ -43,6 +42,3 @@ body {
 ::-webkit-scrollbar-track {
   display: none;
 } 
-
-
-

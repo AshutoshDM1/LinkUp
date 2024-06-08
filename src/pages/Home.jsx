@@ -30,7 +30,7 @@ const locomotiveScroll = new LocomotiveScroll();
             <p>Fast, Easy and Unlimited team Chat</p>
           </div>
           <div className="btns">
-            <h2 className="sign_in" onClick={() => handleNavigate("/signin")}>
+            <h2 className="sign_in" onClick={() => handleNavigate("/signUp")}>
               Try for Free
             </h2>
             <h2 className="login" onClick={() => handleNavigate("/about")}>
