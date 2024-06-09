@@ -75,3 +75,18 @@
   margin: 3vw;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
 }
+
+
+.loaderMain {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.loaderMain > img{
+  height: 30vw;
+  object-fit: cover;
+
+}

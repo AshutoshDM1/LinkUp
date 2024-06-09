@@ -33,7 +33,6 @@ export const login = async (userData) => {
       },
     });
     console.log("Form submitted successfully:", response.data);
-    alert("Successfully signed up!");
     const token = response.data.token;
     localStorage.setItem("token", token);
   } catch (error) {

@@ -3,13 +3,14 @@ import Footer from "../components/Footer";
 import NavBar from "../components/Navbar";
 import css from "../components/styles/chat.module.css";
 import Smallchat from "../components/smallchat";
-import { Button, TextField } from "@mui/material";
-import { RecoilRoot, useRecoilState, useRecoilValue } from "recoil";
+import { Button, TextField, CircularProgress } from "@mui/material";
+import { RecoilRoot, useRecoilState, useRecoilStateLoadable, useRecoilValue } from "recoil";
 import { chatAtom } from "../state/atoms/atoms";
 import { postChatPosts } from "../services/api";
 
 const Chat = () => {
-  const [chatState, setChatState] = useRecoilState(chatAtom);
+  const [chatState, setChatState] = useRecoilStateLoadable(chatAtom);
+  const [isPosting, setIsPosting] = useState(false);
 
   const chatEndRef = useRef(null);
   const chatSectionRef = useRef(null);
@@ -19,7 +20,9 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    scrollToBottom();
+    if (chatState.state === "hasValue") {
+      scrollToBottom();
+    }
   }, [chatState]);
 
   const [input, setInput] = useState("");
@@ -29,7 +32,7 @@ const Chat = () => {
   };
 
   const chatHandle = async () => {
-    const newMessageKey = `chat${Object.keys(chatState).length + 1}`;
+    const newMessageKey = `chat${Object.keys(chatState.contents).length + 1}`;
     const newMessage = {
       [newMessageKey]: {
         username: "Ashutosh",
@@ -37,26 +40,49 @@ const Chat = () => {
         message: input,
       },
     };
-    console.log(newMessage)
+    console.log(newMessage);
+
     setChatState((prevChatState) => ({
       ...prevChatState,
       ...newMessage,
-      
     }));
-    let {username , message } = newMessage[newMessageKey] ;
+
+    let { username, message } = newMessage[newMessageKey];
     const userData = {
-      username : username,
-      message : message
-    }
-    console.log(userData)
+      username: username,
+      message: message,
+    };
+    console.log(userData);
+
+    setIsPosting(true);
     try {
       const response = await postChatPosts(userData);
-      console.log(response)
+      console.log(response);
     } catch (error) {
-      alert(error)
+      alert(error);
+    } finally {
+      setIsPosting(false);
     }
     setInput("");
   };
+
+  if (chatState.state === "loading") {
+    return (
+      <>
+        <div className={css.loaderMain}  >
+          <img src="/loading_2.svg" />
+        </div>
+      </>
+    );
+  }
+
+  if (chatState.state === "hasError") {
+    return (
+      <>
+        <h1>Error loading chat</h1>
+      </>
+    );
+  }
 
   return (
     <>
@@ -67,10 +93,10 @@ const Chat = () => {
             <div className={css.title}>LinkUp-Chat</div>
           </div>
           <div ref={chatSectionRef} className={css.chatSection}>
-            {Object.keys(chatState).map((chat) => {
-              const id = chatState[chat]._id;
+            {Object.keys(chatState.contents).map((chat) => {
+              const id = chatState.contents[chat]._id;
               return (
-                <Smallchat key={id} id={id} message={chatState[chat].message} />
+                <Smallchat key={id} id={id} message={chatState.contents[chat].message} />
               );
             })}
             <div ref={chatEndRef}></div>
@@ -87,10 +113,11 @@ const Chat = () => {
                 id="outlined-basic"
                 label="Enter your message here..."
                 variant="standard"
+                disabled={isPosting}
               />
             </div>
-            <Button onClick={chatHandle} variant="contained" size="large">
-              Send
+            <Button onClick={chatHandle} variant="contained" size="large" disabled={isPosting}>
+              {isPosting ? <CircularProgress size={24} /> : "Send"}
             </Button>
           </div>
         </div>

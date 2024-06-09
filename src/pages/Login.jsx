@@ -39,6 +39,8 @@ const Login = () => {
     }
     try {
       const response = await login(userData);
+      alert("Successfully signed up!");
+      navigate("/chat")
     } catch (error) {
       console.error(error);
       alert("Login failed. Please try again.");
