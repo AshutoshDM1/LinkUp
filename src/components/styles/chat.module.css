@@ -55,7 +55,7 @@
   height: 80%;
   width: 100%;
   /* background: rgba(7, 150, 227, 0.777); */
-  background-image: url("/public/bg_image2.avif");
+  background-image: url("/bg_image2.avif");
   background-size: cover;
   background-blend-mode: color;
   display: flex;
@@ -73,4 +73,5 @@
   padding: 3vw;
   color: rgb(0, 0, 0);
   margin: 3vw;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
 }

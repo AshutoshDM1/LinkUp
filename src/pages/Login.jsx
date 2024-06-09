@@ -39,7 +39,6 @@ const Login = () => {
     }
     try {
       const response = await login(userData);
-      // console.log(response)
     } catch (error) {
       console.error(error);
       alert("Login failed. Please try again.");
